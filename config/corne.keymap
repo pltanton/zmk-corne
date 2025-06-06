@@ -39,7 +39,7 @@
         em_email {
             bindings = <&email_dvorak>;
             key-positions = <45 27>;
-            layers = <1>;
+            layers = <2>;
         };
 
         del {
@@ -64,7 +64,7 @@
             label = "MOD_2_1";
             #binding-cells = <0>;
             tapping-term-ms = <20>;
-            bindings = <&mo 2>, <&mo 1>;
+            bindings = <&mo 1>, <&mo 2>;
         };
 
         msc {
@@ -103,8 +103,25 @@
             >;
         };
 
-        lower_layer {
+        lower_laer {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
+            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
+            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+            //                    | GUI |     | SPC |   | ENT |     | ALT |
+
+            bindings = <
+&kp TAB    &kp N1    &kp N2  &kp N3     &kp N4      &kp N5                  &kp N6                 &kp N7         &kp N8         &kp N9                &kp N0                 &kp BSPC
+&kp GRAVE  &kp EXCL  &kp AT  &kp HASH   &kp DOLLAR  &kp PERCENT             &kp CARET              &kp AMPS       &kp STAR       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PIPE
+&kp LSHFT  &trans    &trans  &kp MINUS  &kp EQUAL   &kp LEFT_PARENTHESIS    &kp RIGHT_PARENTHESIS  &kp LS(MINUS)  &kp LS(EQUAL)  &trans                &trans                 &trans
+                             &trans     &trans      &trans                  &kp BACKSPACE          &trans         &kp RALT
+            >;
+
             label = "lower";
+        };
+
+        raise_layer {
+            label = "raise";
 
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
@@ -113,28 +130,22 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&kp LSHFT   &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans    &trans     &trans  &trans
-                                        &kp LGUI      &trans        &kp SPACE       &kp RET   &trans    &kp RALT
+&trans  &kp INS  &kp PRINTSCREEN  &trans  &trans  &trans       &kp PG_UP      &kp N7            &kp UP_ARROW    &trans      &trans  &kp BSPC
+&trans  &trans   &trans           &trans  &trans  &trans       &kp PAGE_DOWN  &kp LEFT          &kp DOWN        &kp RIGHT   &trans  &trans
+&trans  &trans   &trans           &trans  &trans  &trans       &trans         &kp K_PLAY_PAUSE  &kp K_PREVIOUS  &kp K_NEXT  &trans  &trans
+                                  &trans  &trans  &kp SPACE    &kp RET        &trans            &kp LALT
             >;
         };
 
-        raise_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
+        layer_3 {
             bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans       &trans  &trans  &trans  &trans   &trans
+&kp F12     &kp F1        &kp F2        &kp F3        &kp F4        &kp F5          &kp F6       &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
+&trans      &trans        &trans        &trans        &trans        &trans          &trans       &trans  &trans  &trans  &trans   &trans
+                                        &trans        &trans        &bootloader     &bootloader  &trans  &trans
             >;
 
-            label = "raise";
+            label = "adjust";
         };
 
         //                 adjust_layer {
