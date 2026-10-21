@@ -37,12 +37,12 @@ layers:
   - .
   - /
   - ']'
-  - {t: F18, h: Alt+Ctl+LGUI}
+  - Alt+Ctl+LGUI
   - symbol
   - SPACE
   - ENTER
   - '&mod_2_1'
-  - LGUI
+  - {t: F18, h: LGUI}
   mac:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -85,7 +85,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - Ctl+LGUI
+  - {t: F18, h: Ctl+LGUI}
   symbol:
   - '`'
   - '1'
