@@ -87,7 +87,7 @@
             bindings = <&mo RAISE>, <&mo LOWER>;
         };
 
-        mod1_f18: mod1_f18 {
+        mod2_f18: mod2_f18 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -130,7 +130,7 @@
 &kp TAB        &kp Q           &kp W            &kp E               &kp R                       &kp T        &kp Y      &kp U        &kp I        &kp O        &kp P          &kp LBKT
 &gresc         &hm LEFT_ALT A  &hm LEFT_META S  &hm LEFT_CONTROL D  &hm LEFT_SHIFT F            &kp G        &kp H      &hm RSHFT J  &hm RCTRL K  &hm RMETA L  &hm RALT SEMI  &kp SQT
 &kp BACKSLASH  &kp Z           &kp X            &kp C               &kp V                       &kp B        &kp N      &kp M        &kp COMMA    &kp DOT      &kp FSLH       &kp RIGHT_BRACKET
-                                                &mod1_f18 LA(LC(LGUI)) F18  &mo LOWER           &kp SPACE    &kp ENTER  &mod_2_1     &kp LGUI
+                                                &kp LA(LC(LGUI))            &mo LOWER           &kp SPACE    &kp ENTER  &mod_2_1     &mod2_f18 LGUI F18
             >;
         };
 
@@ -140,7 +140,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &kp LC(LGUI)
+                        &trans  &trans  &trans    &trans  &trans  &mod2_f18 LC(LGUI) F18
             >;
         };
 
